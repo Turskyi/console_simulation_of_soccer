@@ -41,7 +41,8 @@ public class Game {
 
         while ((teamA.getPoints ( ) < 3) && (teamB.getPoints ( ) < 3)) {
 
-//            for ( int i = 0 ; (teamA.getPoints ( ) < 3) && (teamB.getPoints ( ) < 3) ; i++){
+//       or in order one by one with:     for ( int i = 0 ; (teamA.getPoints ( ) < 3) && (teamB.getPoints ( ) < 3) ; i++){
+//                 where teamA.getPlayers ()[ran.nextInt(10)].getName ( ) = teamA.getPlayers ()[i].getName ( )
 
             System.out.println ("Player " + teamA.getPlayers ()[ran.nextInt(10)].getName ( ) + " from Team " + teamA.getName () + " hitting the ball against Team " + teamB.getName ());
 
