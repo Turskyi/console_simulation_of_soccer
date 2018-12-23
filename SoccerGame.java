@@ -1,12 +1,61 @@
 package penalty;
 
-        import java.util.Random;
+import java.util.Random;
+
+public class Player {
+
+    private String name;
+    private int skills;
+
+    public Player(String name, int skills) {
+
+        this.name = name;
+        this.skills = skills;
+    }
+
+    public int getSkills() {
+        return skills;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+public class Team {
+
+    private Player[] players;
+    private String name;
+    private int points;
+
+    public Team(Player[] players, String name, int points) {
+        this.players = players;
+        this.name = name;
+        this.points = points;
+    }
+
+    public Player[] getPlayers() {
+        return players;
+    }
+    
+
+    public String getName() {
+        return name;
+    }
+    
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+}
 
 public class Game {
     Random ran = new Random ( );
     public Team teamA;
     public Team teamB;
-
 
     public Game() {
 
@@ -34,10 +83,7 @@ public class Game {
 
     }
 
-
     public void start() {
-
-
 
         while ((teamA.getPoints ( ) < 3) && (teamB.getPoints ( ) < 3)) {
 
@@ -76,4 +122,13 @@ public class Game {
                 System.out.println ("Goalkeeper of Team "+ teamA.getName () +" got the ball. The game keeps going...");
         }
     }
+// Simulator of Soccer Game. In the role of the commentator is the console. Use aggregation.
+//  Classes: football player (name, skills), a team (array of players, name, score), game (two teams),
+//  main class (starts the game).
+public class Main {
+    public static void main(String[] args) {
+        Game game = new Game ( );
+        game.start ( );
+    }
+}
 }
